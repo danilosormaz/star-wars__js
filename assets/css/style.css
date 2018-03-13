@@ -1,0 +1,227 @@
+html {
+    height:100%;
+}
+
+body {
+    margin:0;
+    padding:0;
+    position:relative;
+    padding-bottom:6rem;
+    background-image:url('../images/planets.jpg');
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-size:cover;
+    min-height:100%;
+}
+
+* {
+    box-sizing:border-box;
+}
+
+.navbar {
+    background-color:#333333;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1;
+}
+
+#logo {
+    float:left;
+}
+
+.nav {
+    list-style-type: none;
+    float:left;
+    margin:0px;
+    padding:0px;
+}
+.nav>li {
+    float:left;
+    padding:0px;
+    margin:0px;
+}
+
+.nav>li>a {
+    display:block;
+    color:#FFFFFF;
+    text-align:center;
+    text-decoration:none;
+    padding:14px 16px;
+}
+
+.nav>li>a:hover {
+    background-color:#FFA500;
+}
+
+#logo {
+    text-decoration:none;
+    padding:8px 14px;
+    color:#FFFFFF;
+}
+
+#logo:hover {
+    background-color:#FFA500;
+}
+
+#checker {
+    display:none;
+    padding:14px;
+    color:white;
+}
+
+#checker:hover {
+    background-color:#FFA500;
+    cursor:pointer;
+}
+
+#toggle[type=checkbox] {
+    display: none;
+}
+
+.container {
+    margin:auto;
+    margin-top:70px;
+    max-width:1200px;
+}
+
+.footer {
+    text-align:center;
+    position:absolute;
+    bottom:0px;
+    right:0px;
+    left:0px;
+    background-color:#EFEFEF;
+     max-width:100%; 
+    margin-bottom:0;
+}
+
+.header {
+    text-align:center;
+    color:#FFFFFF;
+    padding:0px 10px;
+}
+
+.flex-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display:flex; 
+    flex-flow: row wrap;
+   /*  justify-content: space-around; */ /* izbacio zbog toga sto sledecu karticu ne stavi na njeno mesto nego na sredinu celog reda  */
+    margin:10px 30px;
+}
+
+.flex-item {
+    width:33.3333%;
+    margin-bottom:10px;
+    text-align:center;
+    padding:0px 5px;
+    align-self:flex-start;  
+}
+
+.flex-item div {
+    width:100%;
+    padding:10px;
+    background-color:#FFFFFF;
+}
+
+#planets,#starships {
+    margin-top:60px;
+}
+
+#starships {
+    margin-bottom:50px;
+}
+
+.number-of {
+    border-radius:12px;
+    background-color:#FFA500;
+    padding:2px 7px;
+    color:#FFFFFF;
+}
+
+.section-header {
+    padding-left:10px;
+    color:#FFA500;
+}
+
+.t01 {
+    border-collapse:collapse;
+    display:none; 
+    width:100%;
+    background-color:#FFFFFF;
+    table-layout:fixed; 
+}
+
+.t01 td {
+    padding:10px;
+    text-align:left;
+    word-wrap:break-word;
+   
+}
+
+.t01 tr:hover {
+    background-color:#FFA500;
+}
+
+.t01 tr td:first-child{
+    font-weight:bold;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.flex-item:hover .t01 {
+    display:table;  
+    cursor:pointer;  
+}
+
+.flex-item>div:hover {
+    cursor:pointer;
+}
+
+@media screen and (max-width: 768px){
+    #toggle[type=checkbox]:checked ~ label ~ .nav  {
+    display:none;}
+    #toggle~label {display:block;float:right;}
+    .nav {width:100%;}
+    .nav li {float:none;}
+    .nav li a {text-align:left;}
+    .flex-container { flex-flow: row wrap; /* justify-content: space-around; */}
+    .flex-item {width:50%;}   
+    
+}
+
+@media screen and (max-width: 576px) {
+    #toggle[type=checkbox]:checked ~ label ~ .nav  {
+    display:none;}
+    #toggle~label {display:block;float:right;}
+    .nav {width:100%;}
+    .nav li {float:none;}
+    .nav li a {text-align:left;} 
+    .flex-item {width:100%;}
+    .flex-container { flex-flow: row wrap;}
+
+}
+
+
+@-webkit-keyframes rotation {
+		from {
+				-webkit-transform: rotate(0deg);
+		}
+		to {
+				-webkit-transform: rotate(359deg);
+		}
+}
+
+.flex-item:hover i {
+    color:#FFA500;
+    animation: rotation 3.5s infinite linear;
+    z-index:-1;
+}
+
+
+
+
+
